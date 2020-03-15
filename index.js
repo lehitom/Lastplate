@@ -1,7 +1,6 @@
 require("dotenv").config();
 const express = require("express");
-const bodyParser = require("body-parser");
-let postal = require("./modules/postal");
+// const bodyParser = require("body-parser");
 const path = require("path");
 const PORT = process.env.PORT || 5000;
 let app = express();
@@ -9,24 +8,22 @@ let app = express();
 const connectionString = process.env.DATABASE_URL;
 // const connectionString = process.env.LOCALDB_URL;
 ​
-const { Pool } = require("pg");
-const pool = new Pool({ connectionString: connectionString });
-​
+​/*
 app.get("/person", getPersons);
 app.get("/getParents", getParents);
 app.get("/getChildren", getChildren);
+​*/
 ​
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
 ​
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-​
-app.use(express.static(path.join(__dirname, "public")));
-app.set("views", path.join(__dirname, "views"));
+// app.use(express.static(path.join(__dirname, "public")));
+// app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.get('/', (req, res) => res.send('Hello World!'))
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
-​
+​/*
 function getPersons(req, response) {
   personID = req.query.id;
   response.setHeader("Content-Type", "application/json");
@@ -85,4 +82,4 @@ function getParents(req, response) {
    
     response.end(text);
   });
-}
+} */
