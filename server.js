@@ -4,6 +4,8 @@ const cool = require('cool-ascii-faces')
 const PORT = process.env.PORT || 5000
 const path = require('path')
 
+const connectionString = process.env.DATABASE_URL;
+
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'))
@@ -18,6 +20,7 @@ app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
 
 function findDeals(req, res) {
 	const zip = Number(request.query.zip);
+	
 
 	searchArea(response, zip);
 }
