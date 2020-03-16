@@ -1,11 +1,11 @@
-require("dotenv").config();
+//require("dotenv").config();
 const express = require("express");
 // const bodyParser = require("body-parser");
 const path = require("path");
 const PORT = process.env.PORT || 5000;
 let app = express();
 ​
-const connectionString = process.env.DATABASE_URL;
+//const connectionString = process.env.DATABASE_URL;
 // const connectionString = process.env.LOCALDB_URL;
 ​
 ​/*
