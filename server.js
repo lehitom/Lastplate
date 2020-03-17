@@ -19,7 +19,7 @@ app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
 
 
 function findDeals(req, res) {
-	const zip = Number(request.query.zip);
+	const zip = Number(req.query.zip);
 	
 
 	searchArea(res, zip);
