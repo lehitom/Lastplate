@@ -41,10 +41,10 @@ function searchArea(res, zip) {
     if (err) {
       console.log(`Error in query: ${err}`);
     }
-	let buffer = resp.rows[0];
-	id = buffer.location_id;
+	let buffer = resp.rows[0].location_id;
+	// id = buffer.location_id;
     // response = resp.rows[0];
-	//id = JSON.stringify(test2);
+	id = JSON.stringify(buffer);
 	console.log(`${id}`);
   });
   
