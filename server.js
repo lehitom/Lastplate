@@ -36,10 +36,10 @@ function searchArea(res, zip) {
       console.log(`Error in query: ${err}`);
     }
     let zip = res.rows[0];
-
-	const params = {zip: zip, sql: sql};
-	res.render('pages/result', params);
   });
+  
+  const params = {zip: zip, sql: sql};
+  res.render('pages/result', params);
 /*
 	if (type == "letterS") {
 		type = "Letters (Stamped)";
