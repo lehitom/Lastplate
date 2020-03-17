@@ -9,8 +9,8 @@
     
 	<div class="main">
 	<h1>Resturants with deals</h1>
-	<p>There are the following restaurants with a deal in zipcode "<%= params.zip %>":</p>
-	<p><%= params.sql %> responded with <%= params.id %> with a length of <%= params.id %></p>
+	<p>There are the following restaurants with a deal in zipcode "<%= zip %>":</p>
+	<p><%= sql %> responded with <%= id %> with a length of <%= id %></p>
 	<table class="table table-inverse">
       <thead>
         <tr>
@@ -21,10 +21,10 @@
       </thead>
 
       <tbody>
-       <% for(var i=0; i < params.id; i++){ %>
+       <% for(var i=0; i < <%= id %>; i++){ %>
        <tr>
 
- 
+         <td><%= resp[i].res_id %></td>
          <td><%= resp[i].res_name %></td>
 
        </tr>
