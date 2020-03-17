@@ -37,14 +37,14 @@ function searchArea(res, zip) {
   //const sql = "SELECT table_name FROM information_schema.tables;"
   
   const values = [zip];
-  let id = "hello";
+  //let id = 12;
   //var result;
   pool.query(sql, values, function(err, resp) {
     if (err) {
       console.log(`Error in query: ${err}`);
     }
 	//id = Object.keys(resp).length;
-	id = resp.rows[0].res_id;
+	let id = resp.rows[0].res_id;
 	//result = resp;
 	//let res_list = 
 	//id = buffer.location_id;
