@@ -11,6 +11,27 @@
 	<h1>Resturants with deals</h1>
 	<p>There are the following restaurants with a deal in zipcode "<%= zip %>":</p>
 	<p><%= sql %> responded with <%= id %></p>
+	<table class="table table-inverse">
+      <thead>
+        <tr>
+          <th>Resturant ID</th>
+          <th>Resturant Name</th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+        <% for(var i=0; i < resp.length; i++) { %>
+       <tr>
+
+         <td><%= resp[i].res_id %></td>
+         <td><%= resp[i].res_name %></td>
+
+       </tr>
+    <% } %>
+      </tbody>
+
+    </table>
 	</div>
 	</div>
 

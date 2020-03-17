@@ -30,7 +30,8 @@ function findDeals(req, res) {
 }
 
 function searchArea(res, zip) {
-	const sql = "SELECT location_id FROM locations l WHERE l.zipcode = $1";
+	const sql = "SELECT res_id, res_name FROM restaurants r INNER JOIN locations l ON l.location_id = r.location_id WHERE l.zipcode = $1"; 
+	//const sql = "SELECT location_id FROM locations l WHERE l.zipcode = $1";
 	//const sql = "SELECT * FROM locations";
 	//zip = sql; 
   //const sql = "SELECT table_name FROM information_schema.tables;"
@@ -41,12 +42,13 @@ function searchArea(res, zip) {
     if (err) {
       console.log(`Error in query: ${err}`);
     }
-	id = resp.rows[0].location_id;
+	id = resp.rows[0].res_id;
+	//let res_list = 
 	//id = buffer.location_id;
     // response = resp.rows[0];
 	//id = JSON.stringify(buffer);
 	console.log(`${id}`);
-	const params = {zip: zip, sql: sql, id: id};
+	const params = {zip: zip, sql: sql, id: id, resp: resp};
 	res.render('pages/result', params);
   });
   
