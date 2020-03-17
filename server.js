@@ -29,7 +29,7 @@ function searchArea(res, zip) {
 	
 	//zip = "1"; 
 	const params = {zip: zip};
-	response.render('pages/result', params);
+	res.render('pages/result', params);
 /*
 	if (type == "letterS") {
 		type = "Letters (Stamped)";
