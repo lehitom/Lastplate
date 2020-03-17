@@ -3,6 +3,7 @@ const app = express()
 const cool = require('cool-ascii-faces')
 const PORT = process.env.PORT || 5000
 const path = require('path')
+const bodyParser = require("body-parser")
 
 const connectionString = process.env.DATABASE_URL;
 const { Pool } = require('pg')
