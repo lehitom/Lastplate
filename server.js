@@ -50,8 +50,8 @@ function searchArea(res, zip) {
     // response = resp.rows[0];
 	//id = JSON.stringify(buffer);
 	console.log(`${id}`);
-	const params = {zip: zip, sql: sql, id: id, resp: resp};
-	res.render('pages/result', params);
+	const params = {zip: zip, sql: sql, id: id};
+	res.render('pages/result', {params: params, resp: resp);
   });
   
   //const params = {zip: zip, sql: sql, id: id};
