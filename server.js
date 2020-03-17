@@ -30,14 +30,14 @@ function findDeals(req, res) {
 }
 
 function searchArea(res, zip) {
-	//const sql = "SELECT location_id FROM locations l WHERE l.zipcode != $1";
+	const sql = "SELECT location_id FROM locations l WHERE l.zipcode = $1";
 	//const sql = "SELECT * FROM locations";
 	//zip = sql; 
-  const sql = "SELECT table_name FROM information_schema.tables;"
+  //const sql = "SELECT table_name FROM information_schema.tables;"
   
   const values = [zip];
   let id = "";
-  pool.query(sql,  function(err, resp) {
+  pool.query(sql, values, function(err, resp) {
     if (err) {
       console.log(`Error in query: ${err}`);
     }
