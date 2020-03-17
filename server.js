@@ -38,11 +38,13 @@ function searchArea(res, zip) {
   
   const values = [zip];
   let id = "hello";
+  //var result;
   pool.query(sql, values, function(err, resp) {
     if (err) {
       console.log(`Error in query: ${err}`);
     }
 	id = resp.rows[0].res_name;
+	//result = resp;
 	//let res_list = 
 	//id = buffer.location_id;
     // response = resp.rows[0];
