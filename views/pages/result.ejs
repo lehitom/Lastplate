@@ -21,14 +21,17 @@
       </thead>
 
       <tbody>
-       <% for( let prop in result ){ %>
+       <% var key, count = 0;
+	   for( key in result){ %>
        <tr>
 
-         <td><%= result[prop].res_id %></td>
-         <td><%= result[prop].res_name %></td>
+         <td><%= result[count].res_id %></td>
+         <td><%= result[count].res_name %></td>
 
        </tr>
-    <% } %>
+    <% if(result.hasOwnProperty(key)) {
+    count++;
+  }} %>
       </tbody>
 
     </table>
