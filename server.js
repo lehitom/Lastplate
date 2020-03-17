@@ -22,17 +22,19 @@ function findDeals(req, res) {
 	const zip = Number(request.query.zip);
 	
 
-	searchArea(response, zip);
+	searchArea(res, zip);
 }
-/*
-function searchArea(response, zip) {
-	
-	let price = "0"; 
 
+function searchArea(res, zip) {
+	
+	//zip = "1"; 
+	const params = {zip: zip};
+	response.render('pages/result', params);
+/*
 	if (type == "letterS") {
 		type = "Letters (Stamped)";
 		//price = 10;
-		price = calculateStamped(weight);
+		price = calculateStamped(weight);*/
 	/*
 	} else if (op == "subtract") {
 		result = left - right;		
@@ -49,10 +51,10 @@ function searchArea(response, zip) {
 
 	// Render the response, using the EJS page "result.ejs" in the pages directory
 	// Makes sure to pass it the parameters we need.
-	response.render('pages/result', params);
+	response.render('pages/result', params);*/
 
 }
-
+/*
 function getPersons(req, response) {
   personID = req.query.id;
   response.setHeader("Content-Type", "application/json");
