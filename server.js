@@ -36,7 +36,7 @@ function searchArea(res, zip) {
   //const sql = "SELECT table_name FROM information_schema.tables;"
   
   const values = [zip];
-  let id = "";
+  let id = "hello";
   pool.query(sql, values, function(err, resp) {
     if (err) {
       console.log(`Error in query: ${err}`);
