@@ -40,7 +40,7 @@ function searchArea(res, zip) {
     if (err) {
       console.log(`Error in query: ${err}`);
     }
-	let test = resp;
+	let test = resp.rows[0];
     // response = resp.rows[0];
 	id = JSON.stringify(test);
   });
