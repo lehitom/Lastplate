@@ -38,20 +38,20 @@ function searchArea(res, zip) {
   
   const values = [zip];
   //let id = 12;
-  //var result;
+  var result;
   pool.query(sql, values, function(err, resp) {
     if (err) {
       console.log(`Error in query: ${err}`);
     }
 	//id = Object.keys(resp).length;
 	let id = resp.rows[0].res_id;
-	//result = resp;
+	result = resp;
 	//let res_list = 
 	//id = buffer.location_id;
     // response = resp.rows[0];
 	//id = JSON.stringify(buffer);
 	console.log(`${id}`);
-	const params = {zip: zip, sql: sql, id: id, resp: resp};
+	const params = {zip: zip, sql: sql, id: id, result: result};
 	res.render('pages/result', params);
   });
   
