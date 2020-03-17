@@ -31,7 +31,7 @@ function findDeals(req, res) {
 
 function searchArea(res, zip) {
 	//const sql = "SELECT location_id FROM locations l WHERE l.zipcode != $1";
-	const sql = "SELECT * FROM locations;
+	const sql = "SELECT * FROM locations";
 	//zip = sql; 
   
   const values = [zip];
