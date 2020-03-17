@@ -44,6 +44,7 @@ function searchArea(res, zip) {
 	let test = resp.rows[0];
     // response = resp.rows[0];
 	id = JSON.stringify(test);
+	console.log(`${test} was born on ${id}`);
   });
   
   const params = {zip: zip, sql: sql, id: id};
