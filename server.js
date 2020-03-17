@@ -35,7 +35,7 @@ function searchArea(res, zip) {
     if (err) {
       console.log(`Error in query: ${err}`);
     }
-    let zip = res.rows[0];
+    zip = res.rows[0];
   });
   
   const params = {zip: zip, sql: sql};
