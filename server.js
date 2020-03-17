@@ -27,7 +27,7 @@ function findDeals(req, res) {
 }
 
 function searchArea(res, zip) {
-	const sql = "SELECT location_id FROM locations l WHERE zipcode = $1";
+	const sql = "SELECT location_id FROM locations l WHERE zipcode = $zip";
 	//zip = sql; 
   
   const values = [zip];
