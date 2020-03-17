@@ -21,11 +21,11 @@
       </thead>
 
       <tbody>
-        <% for(var i=0; i < resp.length; i++) { %>
+       <% data.forEach(function(item, index){ %>
        <tr>
 
-         <td><%= resp[i].res_id %></td>
-         <td><%= resp[i].res_name %></td>
+         <td><%= item.res_id %></td>
+         <td><%= item.res_name %></td>
 
        </tr>
     <% } %>

@@ -42,7 +42,7 @@ function searchArea(res, zip) {
     if (err) {
       console.log(`Error in query: ${err}`);
     }
-	id = resp.rows[0].res_id;
+	id = resp.rows[0].res_name;
 	//let res_list = 
 	//id = buffer.location_id;
     // response = resp.rows[0];
