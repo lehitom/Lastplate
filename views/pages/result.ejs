@@ -9,8 +9,8 @@
     
 	<div class="main">
 	<h1>Resturants with deals</h1>
-	<p>There are the following restaurants with a deal in zipcode "<%= zip %>":</p>
-	<p><%= sql %> responded with <%= id %></p>
+	<p>There are the following restaurants with a deal in zipcode "<%= params.zip %>":</p>
+	<p><%= params.sql %> responded with <%= params.id %></p>
 	<table class="table table-inverse">
       <thead>
         <tr>
