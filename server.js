@@ -16,6 +16,8 @@ app.set('view engine', 'ejs')
 app.get('/cool', (req, res) => res.send(cool()))
 app.get('/', (req, res) => res.sendFile(path.join(__dirname+'/public/form.html')))
 app.get('/find', findDeals)
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
 
@@ -36,7 +38,8 @@ function searchArea(res, zip) {
     if (err) {
       console.log(`Error in query: ${err}`);
     }
-    let id = res.rows[0];
+    let response = res.rows[0];
+	let id = JSON.stringify(response);
   });
   
   const params = {zip: zip, sql: sql, id: id};
