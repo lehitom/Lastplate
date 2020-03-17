@@ -52,7 +52,7 @@ function searchArea(res, zip) {
 	//id = JSON.stringify(buffer);
 	console.log(`${id}`);
 	const params = {zip: zip, sql: sql, id: id, resp: resp};
-	res.render('pages/result', params});
+	res.render('pages/result', params);
   });
   
   //const params = {zip: zip, sql: sql, id: id};
