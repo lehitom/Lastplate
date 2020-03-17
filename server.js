@@ -34,11 +34,11 @@ function searchArea(res, zip) {
 	//zip = sql; 
   
   const values = [zip];
-  pool.query(sql, values, function(err, res) {
+  pool.query(sql, values, function(err, resp) {
     if (err) {
       console.log(`Error in query: ${err}`);
     }
-    let response = res.rows[0];
+    let response = resp.rows[0];
 	let id = JSON.stringify(response);
   });
   
