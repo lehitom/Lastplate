@@ -5,8 +5,8 @@ const PORT = process.env.PORT || 5000
 const path = require('path')
 
 const connectionString = process.env.DATABASE_URL;
-const { Pool } = require("pg");
-const pool = new Pool({ connectionString: connectionString });
+const { Pool } = require('pg')
+const pool = new Pool({ connectionString: connectionString })
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'))
