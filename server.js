@@ -45,7 +45,7 @@ function searchArea(res, zip) {
     }
 	//id = Object.keys(resp).length;
 	let id = resp.rows[0].res_id;
-	result = resp;
+	result = JSON.stringify(resp);
 	//let res_list = 
 	//id = buffer.location_id;
     // response = resp.rows[0];
