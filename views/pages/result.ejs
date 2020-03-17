@@ -21,11 +21,11 @@
       </thead>
 
       <tbody>
-       <% result.forEach(function(o) { %>
+       <% for( let prop in result ){ %>
        <tr>
 
-         <td><%= o.res_id %></td>
-         <td><%= o.res_name %></td>
+         <td><%= result[prop].res_id %></td>
+         <td><%= result[prop].res_name %></td>
 
        </tr>
     <% }); %>
