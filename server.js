@@ -38,6 +38,7 @@ function searchArea(res, zip) {
 
 	const params = {zip: zip, sql: sql};
 	res.render('pages/result', params);
+  }
 /*
 	if (type == "letterS") {
 		type = "Letters (Stamped)";
