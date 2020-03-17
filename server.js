@@ -27,7 +27,7 @@ function findDeals(req, res) {
 
 function searchArea(res, zip) {
 	
-	//zip = "1"; 
+	zip = "1"; 
 	const params = {zip: zip};
 	res.render('pages/result', params);
 /*
