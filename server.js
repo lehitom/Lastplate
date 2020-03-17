@@ -43,7 +43,8 @@ function searchArea(res, zip) {
     if (err) {
       console.log(`Error in query: ${err}`);
     }
-	id = resp.rows[0].res_name;
+	id = Object.keys(resp).length;
+	//id = resp.rows[0].res_name;
 	//result = resp;
 	//let res_list = 
 	//id = buffer.location_id;
