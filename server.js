@@ -35,10 +35,10 @@ function searchArea(res, zip) {
     if (err) {
       console.log(`Error in query: ${err}`);
     }
-    zip = res.rows[0];
+    let id = res.rows[0];
   });
   
-  const params = {zip: zip, sql: sql};
+  const params = {zip: zip, sql: sql, id: id};
   res.render('pages/result', params);
 /*
 	if (type == "letterS") {
