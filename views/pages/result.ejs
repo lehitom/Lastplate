@@ -21,14 +21,14 @@
       </thead>
 
       <tbody>
-       <% for(var i=0; i < id ; i++){ %>
+       <% result.forEach(function(o) { %>
        <tr>
 
-         <td><%= result[0].res_id %></td>
-         <td><%= result[0].res_name %></td>
+         <td><%= o.res_id %></td>
+         <td><%= o.res_name %></td>
 
        </tr>
-    <% } %>
+    <% }); %>
       </tbody>
 
     </table>
