@@ -42,9 +42,10 @@ function searchArea(res, zip) {
       console.log(`Error in query: ${err}`);
     }
 	let test = resp.rows[0];
+	let test2 = test.location_id;
     // response = resp.rows[0];
-	id = JSON.stringify(test);
-	console.log(`${test} was born on ${id}`);
+	id = JSON.stringify(test2);
+	console.log(`${test2} was born on ${id}`);
   });
   
   const params = {zip: zip, sql: sql, id: id};
