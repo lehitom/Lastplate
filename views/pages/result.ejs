@@ -11,8 +11,14 @@
 	<h1>Resturants with deals</h1>
 	<p>This is the top restaurant with a deal in zipcode "<%= zip %>":</p>
 	<p>The resturant "<%= id %>".</p> 
-
+	<ul>
+		<% testing.forEach(function(o) { %>
+			<li><%= o.res_id %> is <%= o.res_name %></li>
+		<% }); %>
+	</ul>
+<!--
 	<table>
+
       <thead>
         <tr>
           <th>Resturant ID</th>
@@ -31,6 +37,7 @@
       </tbody> 
 
     </table>
+-->
 	</div>
 	</div>
 
