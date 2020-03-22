@@ -16,6 +16,7 @@ app.set('view engine', 'ejs')
 app.get('/cool', (req, res) => res.send(cool()))
 app.get('/', (req, res) => res.sendFile(path.join(__dirname+'/public/form2.html')))
 app.get('/form', (req, res) => res.sendFile(path.join(__dirname+'/public/form.html')))
+app.get('/getRestaurants', (req, res) => res.sendFile(path.join(__dirname+'/public/getRestaurants.php')))
 app.get('/find', findDeals)
 app.get('/find2', findDeals2)
 app.use(bodyParser.urlencoded({ extended: false }));

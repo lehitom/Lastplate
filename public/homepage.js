@@ -21,6 +21,6 @@ function loadZip(str) {
     document.getElementById("txtHint").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "public/getRestaurants.php?q="+str, true);
+  xhttp.open("GET", "getRestaurants.php?q="+str, true);
   xhttp.send();
 }
