@@ -78,7 +78,7 @@ function searchArea2(res, zip) {
 	let testing = JSON.stringify(test);
 	let num = resp.rowCount;
 	
-	console.log(Array.from(testing[0].res_id));
+	console.log(Array.from(testing));
 	console.log(testing);
 	console.log(result);
 	//let res_list = 
