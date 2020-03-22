@@ -54,7 +54,7 @@ function searchArea(res, zip) {
 	const params = {zip: zip, sql: sql, id: id, result: result};
 	res.render('pages/result', params);
   });
-  
+}
   
   function findDeals2(req, res) {
 	const zip = Number(req.query.zip);
@@ -73,39 +73,7 @@ function searchArea2(res, zip) {
 	let id = resp.rows[0];
 	let result = JSON.stringify(id);
 	response.end(result);
-	//let res_list = 
-	//id = buffer.location_id;
-    // response = resp.rows[0];
-	//id = JSON.stringify(buffer);
-	//console.log(`${id}`);
-	//const params = {zip: zip, sql: sql, id: id, result: result};
-	//res.render('pages/result', params);
   });
-  //const params = {zip: zip, sql: sql, id: id};
-  //res.render('pages/result', params);
-/*
-	if (type == "letterS") {
-		type = "Letters (Stamped)";
-		//price = 10;
-		price = calculateStamped(weight);*/
-	/*
-	} else if (op == "subtract") {
-		result = left - right;		
-	} else if (op == "multiply") {
-		result = left * right;
-	} else if (op == "divide") {
-		result = left / right; *//*
-	} else {
-		price - "20";
-	}
-
-	// Set up a JSON object of the values we want to pass along to the EJS result page
-	const params = {type: type, weight: weight, price: price};
-
-	// Render the response, using the EJS page "result.ejs" in the pages directory
-	// Makes sure to pass it the parameters we need.
-	response.render('pages/result', params);*/
-
 }
 /*
 function getPersons(req, response) {
