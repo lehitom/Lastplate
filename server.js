@@ -72,16 +72,20 @@ function searchArea2(res, zip) {
       console.log(`Error in query: ${err}`);
     }
 	//id = Object.keys(resp).length;
+	let test = resp.rows;
 	let id = resp.rows[0].res_name;
-	result = JSON.stringify(resp);
-	console.log(resp);
+	let result = JSON.stringify(resp);
+	let testing = JSON.stringify(test);
+	
+	console.log(test);
+	console.log(testing);
 	console.log(result);
 	//let res_list = 
 	//id = buffer.location_id;
     // response = resp.rows[0];
 	//id = JSON.stringify(buffer);
 	console.log(resp.rowCount);
-	const params = {zip: zip, sql: sql, id: id, result: result};
+	const params = {zip: zip, sql: sql, id: id, result: result, testing: testing};
 	res.render('pages/result', params);
   });
 }/*
