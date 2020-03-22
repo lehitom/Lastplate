@@ -17,6 +17,7 @@ app.get('/cool', (req, res) => res.send(cool()))
 app.get('/', (req, res) => res.sendFile(path.join(__dirname+'/public/form2.html')))
 app.get('/form', (req, res) => res.sendFile(path.join(__dirname+'/public/form.html')))
 app.get('/find', findDeals)
+app.get('/find2', findDeals2)
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -25,8 +26,6 @@ app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
 
 function findDeals(req, res) {
 	const zip = Number(req.query.zip);
-	
-
 	searchArea(res, zip);
 }
 
@@ -56,6 +55,32 @@ function searchArea(res, zip) {
 	res.render('pages/result', params);
   });
   
+  
+  function findDeals2(req, res) {
+	const zip = Number(req.query.zip);
+	searchArea2(res, zip);
+}
+
+function searchArea2(res, zip) {
+	const sql = "SELECT res_id, res_name FROM restaurants r INNER JOIN locations l ON l.location_id = r.location_id WHERE l.zipcode = $1 ORDER BY res_id DESC"; 
+  const values = [zip];
+  //var result;
+  pool.query(sql, values, function(err, resp) {
+    if (err) {
+      console.log(`Error in query: ${err}`);
+    }
+	//id = Object.keys(resp).length;
+	let id = resp.rows[0];
+	let result = JSON.stringify(id);
+	response.end(result);
+	//let res_list = 
+	//id = buffer.location_id;
+    // response = resp.rows[0];
+	//id = JSON.stringify(buffer);
+	//console.log(`${id}`);
+	//const params = {zip: zip, sql: sql, id: id, result: result};
+	//res.render('pages/result', params);
+  });
   //const params = {zip: zip, sql: sql, id: id};
   //res.render('pages/result', params);
 /*
