@@ -14,7 +14,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 //app.get('/', (req, res) => res.send('Hello World!'))
 app.get('/cool', (req, res) => res.send(cool()))
-app.get('/', (req, res) => res.sendFile(path.join(__dirname+'/public/form.html')))
+app.get('/', (req, res) => res.sendFile(path.join(__dirname+'/public/form2.html')))
 app.get('/find', findDeals)
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

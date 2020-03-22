@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Last Plate</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="homepage.js"></script>
+	<link rel="stylesheet" href="week02home.css" type="text/css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="header-content-main">
+        <h1>The Last Plate</h1>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="row">
+    
+	<div class="main">
+      <h1>Deal Finder</h1>
+	  <!--
+	<form action="/find" method="get">
+
+		<p>Please Enter your Zip Code</p>
+		<input type="number" name="zip">
+
+		<br><br>
+		<input type="submit" value="Get Result">
+
+	</form>
+	-->
+		<p>Please Enter your Zip Code</p>
+		<input type="number" name="zip" id="zip">
+		<button onclick="search();">Search</button>
+		
+		<div id="divResults">
+		<h2>Results</h2>
+		<ul id="ulResults">
+		</ul>
+	</div>
+		
+	</div>
+	<div class="side">
+		<h1>(In the future a DB request will populate this with valide zip codes, but for now the only valid zip code is 83221)</h1>
+	</div>
+	
+   <footer>
+    <div class="footer">
+      <h2>CS 313 - Shawn Porter - Thomas Wood - Web Engineering II</h2>
+    </div>
+  </footer>
+  
+</body>
+</html>
