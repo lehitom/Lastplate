@@ -10,8 +10,8 @@
 	<div class="main">
 	<h1>Resturants with deals</h1>
 	<p>This is the top restaurant with a deal in zipcode "<%= zip %>":</p>
-	<p>The resturant "<%= id %>".</p> <!--
-	<table class="table table-inverse">
+	<p>The resturant "<%= id %>".</p> 
+	<table>
       <thead>
         <tr>
           <th>Resturant ID</th>
@@ -21,20 +21,18 @@
       </thead>
 
       <tbody>
-       <% var key, count = 0;
-	   for( key in result){ %>
+       <% for (var i = 0; i < result.rowCount; i++) { %>
        <tr>
-
+		 <td>hello world<td>
+		 <td>bye<td>
+	   <!--
          <td><%= result[count].res_id %></td>
          <td><%= result[count].res_name %></td>
-
+-->
        </tr>
-    <% if(result.hasOwnProperty(key)) {
-    count++;
-  }} %>
       </tbody> 
 
-    </table>-->
+    </table>
 	</div>
 	</div>
 
