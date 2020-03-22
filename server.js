@@ -69,10 +69,13 @@ function searchArea2(res, zip) {
     if (err) {
       console.log(`Error in query: ${err}`);
     }
+	console.log("Error in request");
 	//id = Object.keys(resp).length;
-	let id = resp.rows[0];
-	let result = JSON.stringify(id);
-	return(result);
+	//let id = resp.rows[0];
+	//let result = JSON.stringify(id);
+	//response.end("hello world");
+	//const person = resp[0];
+	//response.status(200).json(person);
   });
 }
 /*
