@@ -11,8 +11,7 @@
 	<h1>Resturants with deals</h1>
 	<p>This is the top restaurant with a deal in zipcode "<%= zip %>":</p>
 	<p>The resturant "<%= id %>".</p> 
-	<!--<p><%= result.rows[0].res_id %></p>
-	<p><%= result.rowCount %></p> -->
+
 	<table>
       <thead>
         <tr>
@@ -23,10 +22,10 @@
       </thead>
 
       <tbody>
-       <% for (var i = 0; i < result.rowCount; i++) { %>
+       <% for (var i = 0; i < num; i++) { %>
        <tr>
-         <td><%= result.rows[i].res_id %></td>
-         <td><%= result.rows[i].res_name %></td>
+         <td><%= testing[i].res_id %></td>
+         <td><%= testing[i].res_name %></td>
        <% } %>
        </tr>
       </tbody> 

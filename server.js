@@ -76,6 +76,7 @@ function searchArea2(res, zip) {
 	let id = resp.rows[0].res_name;
 	let result = JSON.stringify(resp);
 	let testing = JSON.stringify(test);
+	let num = resp.rowCount;
 	
 	console.log(test);
 	console.log(testing);
@@ -85,7 +86,7 @@ function searchArea2(res, zip) {
     // response = resp.rows[0];
 	//id = JSON.stringify(buffer);
 	console.log(resp.rowCount);
-	const params = {zip: zip, sql: sql, id: id, result: result, testing: testing};
+	const params = {zip: zip, sql: sql, id: id, result: result, testing: testing, num: num};
 	res.render('pages/result', params);
   });
 }/*
