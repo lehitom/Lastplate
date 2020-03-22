@@ -8,7 +8,7 @@
 		console.log(status);
 		console.log(data);
 	});
-} */
+}*/
 function loadZip(str) {
   var xhttp;
   if (str == "") {
@@ -21,6 +21,7 @@ function loadZip(str) {
     document.getElementById("txtHint").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "getRestaurants.php?q="+str, true);
+  //xhttp.open("GET", "getRestaurants.php?q="+str, true);
+  xhttp.open("GET", "https://infinite-brook-67283.herokuapp.com/find2?zip=83221", true);
   xhttp.send();
 }

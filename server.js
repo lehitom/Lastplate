@@ -65,6 +65,7 @@ function searchArea(res, zip) {
 function searchArea2(res, zip) {
 	const sql = "SELECT res_id, res_name FROM restaurants r INNER JOIN locations l ON l.location_id = r.location_id WHERE l.zipcode = $1 ORDER BY res_id DESC"; 
   const values = [zip];
+  console.log(sql);
   //var result;
   pool.query(sql, values, function(err, resp) {
     if (err) {
