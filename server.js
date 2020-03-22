@@ -80,7 +80,7 @@ function searchArea2(res, zip) {
 	//id = buffer.location_id;
     // response = resp.rows[0];
 	//id = JSON.stringify(buffer);
-	console.log(`${id}`);
+	console.log(result.rowCount);
 	const params = {zip: zip, sql: sql, id: id, result: result};
 	res.render('pages/result', params);
   });
