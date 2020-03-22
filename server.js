@@ -16,7 +16,7 @@ app.set('view engine', 'ejs')
 app.get('/cool', (req, res) => res.send(cool()))
 app.get('/', (req, res) => res.sendFile(path.join(__dirname+'/public/form2.html')))
 app.get('/form', (req, res) => res.sendFile(path.join(__dirname+'/public/form.html')))
-app.get('/getRestaurants', (req, res) => res.sendFile(path.join(__dirname+'/public/getRestaurants.php')))
+//app.get('/getRestaurants', (req, res) => res.sendFile(path.join(__dirname+'/public/getRestaurants.php')))
 app.get('/find', findDeals)
 app.get('/find2', findDeals2)
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -66,6 +66,21 @@ function searchArea2(res, zip) {
 	const sql = "SELECT res_id, res_name FROM restaurants r INNER JOIN locations l ON l.location_id = r.location_id WHERE l.zipcode = $1 ORDER BY res_id DESC"; 
   const values = [zip];
   //var result;
+  pool.query(sql, values, function(err, resp) {
+    if (err) {
+      console.log(`Error in query: ${err}`);
+    }
+	//id = Object.keys(resp).length;
+	let id = resp.rows[0].res_name;
+	result = JSON.stringify(resp);
+	//let res_list = 
+	//id = buffer.location_id;
+    // response = resp.rows[0];
+	//id = JSON.stringify(buffer);
+	console.log(`${id}`);
+	const params = {zip: zip, sql: sql, id: id, result: result};
+	res.render('pages/result', params);
+  });/*
   pool.query(sql, values, function(err, resp) {
     if (err) {
       console.log(`Error in query: ${err}`);
