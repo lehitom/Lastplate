@@ -12,8 +12,8 @@
 	<p>This is the top restaurant with a deal in zipcode "<%= zip %>":</p>
 	<p>The resturant "<%= id %>".</p> 
 	<ul>
-		<% Array.from(testing).forEach(function(o) { %>
-			<li><%= o.res_id %> is <%= o.res_name %></li>
+		<% Array.from(testing).forEach(row => { %>
+			<li><%= row.res_id %> is <%= row.res_name %></li>
 		<% }); %>
 	</ul>
 <!--
