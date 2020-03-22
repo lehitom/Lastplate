@@ -23,12 +23,9 @@
       <tbody>
        <% for (var i = 0; i < result.rowCount; i++) { %>
        <tr>
-		 <td>hello world<td>
-		 <td>bye<td>
-	   <!--
-         <td><%= result[count].res_id %></td>
-         <td><%= result[count].res_name %></td>
--->      <% } %>
+         <td><%= result.rows[i].res_id %></td>
+         <td><%= result.rows[i].res_name %></td>
+       <% } %>
        </tr>
       </tbody> 
 
