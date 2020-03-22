@@ -81,7 +81,8 @@ function searchArea2(res, zip) {
 	console.log(`${id}`);
 	const params = {zip: zip, sql: sql, id: id, result: result};
 	res.render('pages/result', params);
-  });/*
+  });
+}/*
   pool.query(sql, values, function(err, resp) {
     if (err) {
       console.log(`Error in query: ${err}`);
