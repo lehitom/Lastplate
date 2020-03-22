@@ -72,7 +72,7 @@ function searchArea2(res, zip) {
 	//id = Object.keys(resp).length;
 	let id = resp.rows[0];
 	let result = JSON.stringify(id);
-	response.end(result);
+	return(result);
   });
 }
 /*
