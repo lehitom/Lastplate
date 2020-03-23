@@ -86,6 +86,13 @@ function searchArea2(res, zip) {
 	let str = '{"rows":' + testing + '}';
 	console.log(str);
   console.log(str.rows[0]);
+  
+  
+  var resturants = [0, 'No results']
+  console.log(resturants);
+  let rest = JSON.stringify(resturants);
+  console.log(rest);
+  console.log(rest[0][1]);
   //console.log(result.rows[0][0]);
 	//let res_list = 
 	//id = buffer.location_id;
