@@ -82,7 +82,7 @@ function searchArea2(res, zip) {
 	console.log(test);
 	console.log(testing);
 	console.log(result);
-	console.loge(blah);
+	console.log(blah);
 	//let res_list = 
 	//id = buffer.location_id;
     // response = resp.rows[0];
