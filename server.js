@@ -85,7 +85,7 @@ function searchArea2(res, zip) {
 	console.log(blah);
 	let str = '{"rows":' + testing + '}';
 	console.log(str);
-  console.log(str.rows[0]);
+ // console.log(str.rows[0]);
   
   
   var resturants = [0, 'No results']
