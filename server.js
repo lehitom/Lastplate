@@ -77,10 +77,12 @@ function searchArea2(res, zip) {
 	let result = JSON.stringify(resp);
 	let testing = JSON.stringify(test);
 	let num = resp.rowCount;
+	let blah = resp.rows[0];
 	
-	console.log(Array.from(testing));
+	console.log(test);
 	console.log(testing);
 	console.log(result);
+	console.loge(blah);
 	//let res_list = 
 	//id = buffer.location_id;
     // response = resp.rows[0];
