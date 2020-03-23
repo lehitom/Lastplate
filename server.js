@@ -92,7 +92,7 @@ function searchArea2(res, zip) {
   console.log(resturants);
   let rest = JSON.stringify(resturants);
   console.log(rest);
-  console.log(rest[0][1]);
+  console.log(Array.from(rest[0][1]));
   //console.log(result.rows[0][0]);
 	//let res_list = 
 	//id = buffer.location_id;
