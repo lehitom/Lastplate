@@ -12,6 +12,7 @@ exports.checkCred = (params, callback) => {
   };
   
   pool.query(SQL, (error, results) => {
+	 console.log("here I am");
     if (error || results.rows.length == 0) {
       res.success = false;
     } else {
