@@ -8,7 +8,7 @@ exports.login = (req, res) => {
 	  if (error) {
 		  console.log("Error in login: " + error);
 	  } else {
-		  if (res.success) {
+		  if (results.success) {
 			console.log("here I am in success for controllers");
 			req.session.user = req.body.username;
 			res.json({ success: true });
