@@ -2,8 +2,6 @@ const model = require("../model/models");
 
 
 exports.login = (req, res) => {
-  var user = req.body.username;
-  var password = req.body.password;
   console.log("USER: " + req.body.username + " PASSWORD: " + req.body.password);
   
   model.checkCred = (req.body, (error, results) => {
@@ -12,7 +10,7 @@ exports.login = (req, res) => {
 	  } else {
 		  if (res.success) {
 			console.log("here I am in success for controllers");
-			req.session.user = user;
+			req.session.user = req.body.username;
 			res.json({ success: true });
 		} else {
 			console.log("here I am in failure for controllers");

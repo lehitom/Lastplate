@@ -11,17 +11,16 @@ exports.checkCred = (body, callback) => {
 		"SELECT username, password FROM credentials WHERE username=$1 AND password=$2",
 	  values: [body.user, body.password]
   };
-  console.log("here I am");
-  pool.query(query, (error, results) => {
+	pool.query(query, (err, res) => {
 	 console.log("here I am");
-    if (error || results.rows.length == 0) {
-      res.success = false;
+    if (err || res.rows.length == 0) {
+      console.log(err.stack);
+	  callback(err, null);
     } else {
-      res.success = true;
+      callback(null, {success: true});
     }
-    next();
   });
-}
+};
   
  /* 
   const username = req.body.username;
@@ -40,4 +39,16 @@ exports.checkCred = (body, callback) => {
     }
     next();
   });
+  
+  
+  
+  console.log("here I am");
+  pool.query(query, (err, res) => {
+	 console.log("here I am");
+    if (err || res.rows.length == 0) {
+      res.success = false;
+    } else {
+      res.success = true;
+    }
+    next();
 } */
