@@ -14,7 +14,7 @@ exports.checkCred = (body, callback) => {
 	pool.query(query, (err, res) => {
 	 console.log("here I am");
     if (err || res.rows.length == 0) {
-      console.log(err.stack);
+      console.log("Username not found");
 	  callback(err, null);
     } else {
       callback(null, {success: true});
