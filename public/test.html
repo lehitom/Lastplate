@@ -1,23 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Test Form</title>
-	<script
+  <meta charset="utf-8">
+  <title>Login page</title>
+  <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
 	<script src="test.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="week02home.css" type="text/css">
+  <meta name="description" content="Last Plate Login">
 </head>
 <body>
-<div>
-	<input type="text" id="username" placeholder="username"><br>
+<header>
+    <div class="header-content">
+      <div class="header-content-main">
+        <h1>Login</h1>
+      </div>
+    </div>
+  </header>
+  
+  <div class="row">
+    
+	<div class="main">
+	
+    Username:<br>
+    <input type="text" id="username" placeholder="username"><br>
+    Password:<br>
 	<input type="password" id="password" placeholder="password"><br>
-	<button onclick="login();">Log in</button>
-	<button onclick="logout();">Log out</button><br>
 	<br>
-	<button onclick="getServerTime()">Get server time</button>
-	<div id="status"></div>
-</div>
-
+	<br>
+    <!--<a href="signup.php"><b>Create an account</b></a>-->
+	<br><br>
+    <button onclick="login();">Log in</button><br>
+	</div>
+  </div>
+  <footer>
+    <div class="footer">
+      <h2>CS 313 - Shawn Porter - Thomas Wood - Web Engineering II</h2>
+    </div>
+  </footer>
 </body>
 </html>
