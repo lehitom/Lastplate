@@ -14,7 +14,10 @@ app.use(logRequest);
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
-app.get('/', (req, res) => res.sendFile(path.join(__dirname+'/public/test.html')))
+let controllers = require("./controller/controllers");
+
+app.get('/', (req, res) => res.sendFile(path.join(__dirname+'/public/login.html')))
+app.post('/login', controllers.login);
 
 
 //app.get('/', (req, res) => res.send('Hello World!'))
