@@ -5,12 +5,12 @@ const pool = new Pool({ connectionString: connectionString });
 
 
 exports.checkCred = (body, callback) => {
-	console.log("here I am");
   let query = {
 	  text:
 		"SELECT username, password FROM credentials WHERE username=$1 AND password=$2",
 	  values: [body.user, body.password]
   };
+	console.log("here I am");
 	pool.query(query, (err, res) => {
 	 console.log("here I am");
     if (err || res.rows.length == 0) {
