@@ -16,6 +16,7 @@ exports.checkCred = (body, callback) => {
       console.log("Username not found " + res.rows.length);
 	  callback(err, null);
     } else {
+	  console.log("Username found " + res.rows.length);
       callback(null, {success: true});
     }
   });
