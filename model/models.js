@@ -11,13 +11,12 @@ exports.checkCred = (body, callback) => {
 	  values: [body.username, body.password]
   };
 	pool.query(query, (err, res) => {
-	 console.log("here I am");
-    if (err || res.rows.length == 0) {
+    if (err || res.rows.length != 1) {
       console.log("Username not found " + res.rows.length);
-	  callback(err, {success: false});
+	  callback(err, {success: false, clearance: 0});
     } else {
 	  console.log("Username found " + res.rows.length);
-      callback(null, {success: true});
+      callback(null, {success: true, clearance: res.rows[0].clearance});
     }
   });
 };
