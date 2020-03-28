@@ -8,13 +8,12 @@ exports.checkCred = (body, callback) => {
   let query = {
 	  text:
 		"SELECT username, password FROM credentials WHERE username=$1 AND password=$2",
-	  values: [body.user, body.password]
+	  values: [body.username, body.password]
   };
-	console.log("here I am");
 	pool.query(query, (err, res) => {
 	 console.log("here I am");
     if (err || res.rows.length == 0) {
-      console.log("Username not found");
+      console.log("Username not found " + res.rows.length);
 	  callback(err, null);
     } else {
       callback(null, {success: true});
