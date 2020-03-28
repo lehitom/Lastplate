@@ -7,7 +7,7 @@ const pool = new Pool({ connectionString: connectionString });
 exports.checkCred = (body, callback) => {
   let query = {
 	  text:
-		"SELECT username, password FROM credentials WHERE username=$1 AND password=$2",
+		"SELECT username, password, clearance FROM credentials WHERE username=$1 AND password=$2",
 	  values: [body.username, body.password]
   };
 	pool.query(query, (err, res) => {
@@ -16,7 +16,7 @@ exports.checkCred = (body, callback) => {
 	  callback(err, {success: false, clearance: 0});
     } else {
 	  console.log("Username found " + res.rows.length);
-	  console.log(res);
+	  console.log("Username found " + res.rows[0].clearance);
       callback(null, {success: true, clearance: res.rows[0].clearance});
     }
   });
