@@ -26,3 +26,8 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname+'/public/test.html')
 
 
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
+
+function logRequest(req, res, next) {
+  console.log("Received a request for: " + req.url);
+  next();
+}
