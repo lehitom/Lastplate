@@ -11,7 +11,7 @@ exports.checkCred = (params, callback) => {
 	  values: [params.user, params.password]
   };
   
-  pool.query(SQL, (error, results) => {
+  pool.query(query, (error, results) => {
 	 console.log("here I am");
     if (error || results.rows.length == 0) {
       res.success = false;
