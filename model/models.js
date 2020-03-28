@@ -4,12 +4,12 @@ const pool = new Pool({ connectionString: connectionString })
 
 
 
-exports.checkCred = (params, callback) => {
+exports.checkCred = (body, callback) => {
 	console.log("here I am");
   let query = {
 	  text:
 		"SELECT username, password FROM credentials WHERE username=$1 AND password=$2",
-	  values: [params.user, params.password]
+	  values: [body.user, body.password]
   };
   console.log("here I am");
   pool.query(query, (error, results) => {

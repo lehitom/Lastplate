@@ -6,12 +6,7 @@ exports.login = (req, res) => {
   var password = req.body.password;
   console.log("USER: " + req.body.username + " PASSWORD: " + req.body.password);
   
-  var params = {
-		user: user,
-		password: password
-	};
-  
-  model.checkCred = (params, (error, results) => {
+  model.checkCred = (req.body, (error, results) => {
 	  if (error) {
 		  console.log("Error in login: " + error);
 	  } else {
