@@ -7,8 +7,8 @@ const pool = new Pool({ connectionString: connectionString })
 exports.checkCred = (params, callback) => {
   let query = {
 	  text:
-		"SELECT username, password FROM credentials WHERE username=$1 AND password=$2"
-	  values: [user, password]
+		"SELECT username, password FROM credentials WHERE username=$1 AND password=$2",
+	  values: [params.user, params.password]
   };
   
   pool.query(SQL, (error, results) => {
