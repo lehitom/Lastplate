@@ -16,7 +16,7 @@ function login() {
 	$.post("/login", params, function(result) {
 		if (result && result.success) {
 			$("#status").text("Successfully logged in.");
-			res.sendFile(path.join(__dirname+'/public/form2.html'));
+			$.sendFile(path.join(__dirname+'/public/form2.html'));
 			
 		} else {
 			$("#status").text("Error logging in.");
