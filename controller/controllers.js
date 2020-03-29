@@ -9,8 +9,8 @@ exports.login = (req, res) => {
 		  console.log("Error in login: " + error);
 	  } else {
 		  if (results.success) {
+			req.session.user = req.body.username;
 			console.log(req.session.user);
-			console.log(req.session.clearance);
 			res.json({ success: true });
 		} else {
 			res.json({ success: false });
