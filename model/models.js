@@ -29,7 +29,6 @@ exports.getZips = callback => {
       console.log("Failed zip request");
 	  callback(err, null);
     } else {
-		console.log("doing zip request");
       callback(null, res.rows);
     }
   });
