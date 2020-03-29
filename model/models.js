@@ -16,7 +16,7 @@ exports.checkCred = (body, callback) => {
 	  callback(err, {success: false, clearance: 0});
     } else {
 	  console.log("Username found " + res.rows.length);
-	  let clear = res.rows[0].clearance);
+	  let clear = res.rows[0].clearance;
       callback(null, {success: true, clearance: clear});
     }
   });
