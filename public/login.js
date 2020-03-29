@@ -16,7 +16,8 @@ function login() {
 	$.post("/login", params, function(result) {
 		if (result && result.success) {
 			$("#status").text("Successfully logged in.");
-			$.get('/form2');			
+			//$.get('/form2');
+			window.location.pathname = '/form2'	;		
 		} else {
 			$("#status").text("Error logging in.");
 		}
