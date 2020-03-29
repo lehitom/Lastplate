@@ -5,7 +5,7 @@ async function validZips() {
 		let response = await fetch("/validZips", {method:"POST"});
 		const json = await response.json();
 		console.log(json);
-		$(".side").replaceWith(pushZips(json));
+		$(".side").replaceWith("cake");
 	}
 	catch (err){
 		console.log("error loading in zips");

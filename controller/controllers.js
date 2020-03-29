@@ -35,7 +35,6 @@ exports.validZips = (req, res) => {
 	  if (error) {
 		  console.log("Error in zips: " + error);
 	  } else {
-		  		console.log("doing zip request");
 		  res.json(results);
 	  }
   });
