@@ -4,7 +4,7 @@ async function validZips() {
 	try {
 		let response = await fetch("/validZips", {method:"POST"});
 		let json = await response.json();
-		console.log(json);
+		
 		$(".side").replaceWith("cake");
 	}
 	catch (err){
