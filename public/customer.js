@@ -1,6 +1,6 @@
 function validZip() {
 	isVerified();
-	$.post("/isLoggedIn", params, function(result) {
+	$.post("/isLoggedIn", function(result) {
 		if (result && result.success) {
 			$(".side").text("Successfully logged in.");
 			//$.get('/form2');
