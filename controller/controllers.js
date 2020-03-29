@@ -10,11 +10,23 @@ exports.login = (req, res) => {
 	  } else {
 		  if (results.success) {
 			req.session.user = req.body.username;
-			console.log(req.session.user);
+			console.log("logged in as " + req.session.user);
 			res.json({ success: true });
 		} else {
 			res.json({ success: false });
 		}
 	  }
   });
+};
+
+exports.isLoggedIn = (req, res) => {
+  const user = req.session.user;
+  if (user != "" && typeof user !== "undefined") {
+    res.json({ success: true });
+  } else {
+    res.status(401).json({
+      success: false,
+      message: "Unauthorized"
+    });
+  }
 };
