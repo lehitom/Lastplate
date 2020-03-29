@@ -11,6 +11,8 @@ exports.login = (req, res) => {
 		  if (results.success) {
 			req.session.user = req.body.username;
 			req.session.clearance = results.clearnace;
+			console.log(results.clearnace);
+			console.log(req.session.user);
 			console.log(req.session.clearance);
 			res.json({ success: true });
 		} else {
