@@ -12,7 +12,7 @@ function validZips() {
 	}
 	//document.getElementById('side').innerHTML= "Hello World";
 }
-
+/*
 function pushZips(json) {
 	
 	var list = document.createElement('ul);
@@ -26,7 +26,7 @@ function pushZips(json) {
 	
 	//json.forEach(row => {
 }
-
+*/
 function isVerified() {
 	$.post("/isLoggedIn", function(res) {
 				if (!(res && res.success)) {
