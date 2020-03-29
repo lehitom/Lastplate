@@ -6,7 +6,7 @@
 	<script src="customer.js"></script>
 	<link rel="stylesheet" href="week02home.css" type="text/css">
 </head>
-<body onload="isVerified()">
+<body onload="validZip()">
   <header>
     <div class="header-content">
       <div class="header-content-main">
@@ -26,7 +26,7 @@
 	<div class="main">
       <h1>Deal Finder</h1>
 	  
-	<form action="" method="get">
+	<form action="" method="post">
 		<select name="customers" onchange="loadZip(this.value)">
 			<option value="">Select a zipcode:</option>
 			<option value="83221">83221</option>
