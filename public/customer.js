@@ -4,7 +4,7 @@ function validZips() {
 	try {
 		let response = fetch("/validZips", {method:"POST"});
 		const json = response.json();
-		document.getElementById('side').appendChild(pushZips(json));
+		document.getElementById('side').innerHTML= (pushZips(json));
 		//pushZips(json);
 	}
 	catch (err){
