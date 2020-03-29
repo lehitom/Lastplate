@@ -40,3 +40,16 @@ exports.validZips = (req, res) => {
 	  }
   });
 };
+
+exports.loadZip = (req, res) => {
+  console.log("Getting all zipcodes");
+  
+  model.getZips((error, results) => {
+	  if (error) {
+		  console.log("Error in zips: " + error);
+	  } else {
+		  console.log(results);
+		  res.json(results);
+	  }
+  });
+};

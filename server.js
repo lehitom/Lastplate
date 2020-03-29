@@ -20,6 +20,7 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname+'/public/login.html'
 app.post('/login', controllers.login);
 app.post('/isLoggedIn', controllers.isLoggedIn);
 app.post('/validZips', controllers.validZips);
+app.post('/loadZip', zip, controllers.loadZip);
 
 app.get('/form', (req, res) => res.render(path.join(__dirname+'/public/form2')));
 

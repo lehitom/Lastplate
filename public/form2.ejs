@@ -24,20 +24,26 @@
   <div class="row">
     
 	<div class="main">
-      <h1>Deal Finder</h1>
+      <h1>Find restaurants with deals</h1>
+	  Valid Zipcode:<br>
+	  <input type="number" id="zipcode" placeholder="zipcode"><br>
+	  <button onclick="loadZip();">Search Zipcode</button><br>
 	  
+	  
+
+<!--	  
 	<form action="" method="post">
 		<select name="customers" onchange="loadZip(this.value)">
 			<option value="">Select a zipcode:</option>
 			<option value="83221">83221</option>
 			<!--<option value="NORTS ">North/South</option>
-			<option value="WOLZA">Wolski Zajazd</option> -->
+			<option value="WOLZA">Wolski Zajazd</option> 
 		</select> <!--
 		<p>Please Enter your Zip Code</p>
 		<input type="number" name="zip">
 
 		<br><br>
-		<input type="submit" value="Get Result">-->
+		<input type="submit" value="Get Result">
 
 	</form>
 	<!--
@@ -54,9 +60,8 @@
 		
 	</div>
 	<div class="side">
-		<h1>Valid Zipcodes are:</h1> 
+		<h3>Valid Zipcodes are:</h3> 
 		<div id="side"></div>
-		<h1>(In the future a DB request will populate this with valide zip codes, but for now the only valid zip code is 83221)</h1>
 	</div>
 	
    <footer>
