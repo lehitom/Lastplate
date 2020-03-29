@@ -1,17 +1,15 @@
-function validZip() {
+async function validZips() {
 	isVerified();
-	$.post("/isLoggedIn", function(result) {
-		if (result && result.success) {
-			$(".side").text("Successfully logged in.");
-			//$.get('/form2');
-			window.location.pathname = '/form';		
-		} else {
-			$(".side").text("Error logging in.");
-		}
-	});
+	
+	try {
+		let response = await fetch("/validZips", {method:"POST"});
+		const json = await response.json();
+		$(".side").text(json);
+	}
+	catch (err){
+		console.log("error loading in zips")
+	}
 }
-
-
 
 function isVerified() {
 	$.post("/isLoggedIn", function(res) {
