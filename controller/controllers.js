@@ -27,3 +27,15 @@ exports.isLoggedIn = (req, res) => {
     res.json({ success: false });
   }
 };
+
+exports.validZips = (req, res) => {
+  console.log("Getting all zipcodes");
+  
+  model.getZips((error, results) => {
+	  if (error) {
+		  console.log("Error in zips: " + error);
+	  } else {
+		  res.json(results);
+	  }
+  });
+};

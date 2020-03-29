@@ -20,6 +20,20 @@ exports.checkCred = (body, callback) => {
     }
   });
 };
+
+exports.getZips = callback => {
+  let query = 
+		"SELECT zipcode FROM locations GROUP BY 1 ORDER BY 1";
+  
+	pool.query(query, function(err, res) => {
+    if (err) {
+      console.log("Failed zip request");
+	  callback(err, null);
+    } else {
+      callback(null, res.rows);
+    }
+  });
+};
   
  /* 
   const username = req.body.username;
