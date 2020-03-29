@@ -21,7 +21,7 @@ app.post('/login', controllers.login);
 //app.post('/isLoggedIn', controllers.isLoggedIn);
 
 app.get('/form', function(req, res) {
-		res.render(path.join(__dirname+'/public/form2.html')))
+		res.render(path.join(__dirname+'/public/form2.html'))
 });
 
 //app.get('/', (req, res) => res.send('Hello World!'))
