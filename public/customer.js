@@ -4,12 +4,13 @@ function validZips() {
 	try {
 		let response = fetch("/validZips", {method:"POST"});
 		const json = response.json();
-		document.getElementById('side').innerHTML= "Hello World";
+		
 		//pushZips(json);
 	}
 	catch (err){
 		console.log("error loading in zips")
 	}
+	document.getElementById('side').innerHTML= "Hello World";
 }
 
 function pushZips(json) {
