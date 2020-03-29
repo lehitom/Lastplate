@@ -20,7 +20,7 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname+'/public/login.html'
 app.post('/login', controllers.login);
 //app.post('/isLoggedIn', controllers.isLoggedIn);
 
-app.get('/form', function(req, res) {
+app.post('/form', function(req, res) {
 		res.render(path.join(__dirname+'/public/form2.html'))
 });
 
