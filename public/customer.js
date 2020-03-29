@@ -16,11 +16,11 @@ function pushZips(json) {
 	
 	var list = document.createElement('ul');
 	
-	for (var i = 0; i < json.rowCount; i++) {
+	json.forEach(row => {
 		var item = document.createElement('li');
-		item.appendChild(document.createTextNode(json.row[i].zipcode));
+		item.appendChild(document.createTextNode(row[i].zipcode));
 		list.appendChild(item);
-	}
+	});
 	return list;
 	
 	//json.forEach(row => {
