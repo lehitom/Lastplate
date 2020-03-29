@@ -1,9 +1,9 @@
-async function validZips() {
+function validZips() {
 	isVerified();
 	
 	try {
-		let response = await fetch("/validZips", {method:"POST"});
-		const json = await response.json();
+		let response = fetch("/validZips", {method:"POST"});
+		const json = response.json();
 		$(".side").text(json);
 	}
 	catch (err){
