@@ -24,9 +24,6 @@ exports.isLoggedIn = (req, res) => {
   if (user != "" && typeof user !== "undefined") {
     res.json({ success: true });
   } else {
-    res.status(401).json({
-      success: false,
-      message: "Unauthorized"
-    });
+    res.json({ success: false });
   }
 };
