@@ -26,7 +26,7 @@ function pushZips(json) {
 	return list;
 
 }
-
+/*
 async function loadZip() {
 	var zip = $("#zipcode").val();
 	
@@ -62,7 +62,7 @@ function loadList(json) {
 	return list;
 
 }
-
+*/
 function isVerified() {
 	$.post("/isLoggedIn", function(res) {
 				if (!(res && res.success)) {
