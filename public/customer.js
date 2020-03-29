@@ -5,7 +5,7 @@ async function validZips() {
 		let response = await fetch("/validZips", {method:"POST"});
 		let json = await response.json();
 		
-		$(".side").replaceWith("cake");
+		$(".side").replaceWith(pushZips(json));
 	}
 	catch (err){
 		console.log("error loading in zips");
@@ -19,12 +19,12 @@ function pushZips(json) {
 	
 	json.forEach(row => {
 		var item = document.createElement('li');
-		item.appendChild(document.createTextNode(row[i].zipcode));
+		item.appendChild(document.createTextNode(row.zipcode));
 		list.appendChild(item);
 	});
+	console.log(list);
 	return list;
-	
-	//json.forEach(row => {
+
 }
 
 function isVerified() {
