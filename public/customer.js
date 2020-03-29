@@ -8,9 +8,9 @@ function validZips() {
 		//pushZips(json);
 	}
 	catch (err){
-		console.log("error loading in zips")
+		console.log("error loading in zips");
 	}
-	document.getElementById('side').innerHTML= "Hello World";
+	//document.getElementById('side').innerHTML= "Hello World";
 }
 
 function pushZips(json) {
