@@ -24,12 +24,12 @@ exports.checkCred = (body, callback) => {
 exports.getZips = callback => {
   let query = 
 		"SELECT zipcode FROM locations GROUP BY 1 ORDER BY 1";
-  console.log("doing zip request");
 	pool.query(query, function(err, res) {
     if (err) {
       console.log("Failed zip request");
 	  callback(err, null);
     } else {
+		console.log("doing zip request");
       callback(null, res.rows);
     }
   });
