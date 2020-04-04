@@ -6,6 +6,17 @@ function isVerified() {
 	});
 }
 
+function logout() {
+	$.post("/logout", function(result) {
+		if (result && result.success) {
+			$("#txtHint").text("Successfully logged out.");
+			window.location.pathname = '/';
+		} else {
+			$("#txtHint").text("Error logging out.");
+		}
+	});
+}
+
 async function validZips() {
 	isVerified();
 	
@@ -86,7 +97,7 @@ function searchRestaurants() {
 			$("#txtHint").append(header);
 			$("#txtHint").append(pushRestaurant(result));
 		} else {
-			$("#txtHint").text("Invalid restaurant ID, no deals found");
+			$("#txtHint").text("No deals found at this location");
 		}
 	});
 }
@@ -96,7 +107,7 @@ function pushRestaurant(json) {
 	
 	json.forEach(row => {
 		var item = document.createElement('li');
-		item.appendChild(document.createTextNode("'" + row.item_name + "' has a " + row.item_discount + "% discount of $" + row.item_price + " with " + row.quantity + " remaining"));
+		item.appendChild(document.createTextNode("'" + row.item_name + "' has a " + row.item_discount + "% discount from $" + row.item_price + " with " + row.quantity + " remaining"));
 		list.appendChild(item);
 	});
 	console.log(list);

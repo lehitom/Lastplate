@@ -19,6 +19,17 @@ exports.login = (req, res) => {
   });
 };
 
+exports.logout = (req, res) => {
+  const user = req.session.user;
+  console.log("USER: " + user);
+  if (user != "" && typeof user !== "undefined") {
+    delete req.session.user;
+    res.json({ success: true });
+  } else {
+    res.json({ success: false });
+  }
+}
+  
 exports.isLoggedIn = (req, res) => {
   const user = req.session.user;
   if (user != "" && typeof user !== "undefined") {

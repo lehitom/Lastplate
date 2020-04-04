@@ -18,6 +18,7 @@ let controllers = require("./controller/controllers");
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname+'/public/login.html')))
 app.post('/login', controllers.login);
+app.post('/logout', controllers.logout);
 app.post('/isLoggedIn', controllers.isLoggedIn);
 app.post('/validZips', controllers.validZips);
 app.post('/searchAreas', controllers.searchAreas);  
