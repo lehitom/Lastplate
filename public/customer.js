@@ -29,7 +29,7 @@ function pushZips(json) {
 
 
 function searchAreas() {
-	var zipcode = $("#zipcode").val();
+	var zipcode = $("#input").val();
 
 	var params = {
 		zipcode: zipcode
