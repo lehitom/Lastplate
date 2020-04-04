@@ -59,3 +59,22 @@ exports.searchAreas = (req, res) => {
 	  }
   });
 };
+
+exports.searchRestaurants = (req, res) => {
+  console.log("Getting Restaurants " + req.body.restaurant);
+  
+  model.getRestaurant(req.body, (error, results) => {
+	  if (error) {
+		  console.log("Error in fetching restaurant: " + error);
+	  } else {
+		  console.log(results);
+		  if (results){
+			  console.log("Success");
+			  res.json(results);
+		  } else {
+			  console.log("Unsuccessful");
+			res.json(null);
+		  }
+	  }
+  });
+};

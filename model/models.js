@@ -45,12 +45,28 @@ exports.getArea = (body, callback) => {
       console.log("Search unsucessful: " + err);
 	  callback(err, null);
     } else {
-	  console.log("Zipcode found " + res.rows.length + " resturants");
+	  console.log("Zipcode found " + res.rows.length + " restaurants");
       callback(null, res.rows);
     }
   });
 };
 
+exports.getRestaurant = (body, callback) => {
+  let query = {
+	  text:
+		"SELECT d.deal_id, d.item_name, d.item_discount, r.address, r.res_name FROM deals s INNER JOIN restaurants r ON d.restaurant_id = r.res_id WHERE d.restaurant_id=$1",
+	  values: [body.restaurant]
+  };
+	pool.query(query, (err, res) => {
+    if (err || res.rows.length == 0) {
+      console.log("Search unsucessful: " + err);
+	  callback(err, null);
+    } else {
+	  console.log("Deals found: " + res.rows.length);
+      callback(null, res.rows);
+    }
+  });
+};
 
  /* 
   const username = req.body.username;

@@ -75,28 +75,28 @@ function searchRestaurants() {
 	var zipcode = $("#input").val();
 
 	var params = {
-		zipcode: zipcode
+		restaurant: restaurant
 	};
 
-	$.post("/searchAreas", params, function(result) {
+	$.post("/searchRestaurants", params, function(result) {
 		if (result) {
 			$("#txtHint").empty();
-			var list = pushArea(result)
-			$("#txtHint").append(list);
+			var header = document.createElement('h3');
+			header.appendChild(document.createTextNode("Deals at " + result.row[0].res_name + ":"));
+			$("#txtHint").append(header);
+			$("#txtHint").append(pushRestaurant(result));
 		} else {
 			$("#txtHint").text("Error getting reply");
 		}
 	});
 }
 
-function pushArea(json) {
-	
-	
+function pushRestaurant(json) {
 	var list = document.createElement('ul');
 	
 	json.forEach(row => {
 		var item = document.createElement('li');
-		item.appendChild(document.createTextNode("ID: " + row.res_id + " is '" + row.res_name + "'"));
+		item.appendChild(document.createTextNode("ID: " + row.deal_id + " is '" + row.item_name + "'"));
 		list.appendChild(item);
 	});
 	console.log(list);

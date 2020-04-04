@@ -21,6 +21,7 @@ app.post('/login', controllers.login);
 app.post('/isLoggedIn', controllers.isLoggedIn);
 app.post('/validZips', controllers.validZips);
 app.post('/searchAreas', controllers.searchAreas);  
+app.post('/searchRestaurants', controllers.searchRestaurants);
 
 app.get('/form', (req, res) => res.render(path.join(__dirname+'/public/form2')));
 
