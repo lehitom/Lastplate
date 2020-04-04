@@ -107,7 +107,7 @@ function pushRestaurant(json) {
 	
 	json.forEach(row => {
 		var item = document.createElement('li');
-		item.appendChild(document.createTextNode("'" + row.item_name + "' has a " + row.item_discount + "% discount from $" + row.item_price + " with " + row.quantity + " remaining"));
+		item.appendChild(document.createTextNode("'" + row.item_name + "' is $" + row.item_price + " with a discount of " + row.item_discount + "% with " + row.quantity + " remaining."));
 		list.appendChild(item);
 	});
 	console.log(list);
