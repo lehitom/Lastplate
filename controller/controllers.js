@@ -48,8 +48,12 @@ exports.searchAreas = (req, res) => {
 	  if (error) {
 		  console.log("Error in fetching zipcode: " + error);
 	  } else {
-		  console.log(results);
-		  res.json({ success: true });
+		  if (results.success) {
+			console.log("Recieved rows for " + req.body.zipcode);
+			res.json({ success: true });
+		} else {
+			res.json({ success: false });
+		}
 	  }
   });
 };

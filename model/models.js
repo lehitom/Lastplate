@@ -41,7 +41,7 @@ exports.getArea = (body, callback) => {
 	  values: [body.zipcode]
   };
 	pool.query(query, (err, res) => {
-    if (err) {
+    if (err || res.rows.length == 0) {
       console.log("Search unsucessful: " + err);
 	  callback(err, {success: false});
     } else {
