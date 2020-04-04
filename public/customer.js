@@ -53,8 +53,8 @@ function pushArea(json) {
 	
 	json.forEach(row => {
 		var item = document.createElement('li');
-		item.appendChild(document.createTextNode(row.res_id));
-		item.appendChild(document.createTextNode(row.res_name));
+		item.appendChild(document.createTextNode("<b>" + row.res_id + "</b> is" + row.res_name));
+		//item.appendChild(document.createTextNode(row.res_name));
 		list.appendChild(item);
 	});
 	console.log(list);
