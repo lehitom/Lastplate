@@ -37,13 +37,26 @@ function searchAreas() {
 
 	$.post("/searchAreas", params, function(result) {
 		if (result) {
-			$("#txtHint").text("Got back reply");
+			$("#txtHint").replaceWith(pushArea(result);
 		} else {
 			$("#txtHint").text("Error getting reply");
 		}
 	});
 }
 
+function pushArea(json) {
+	
+	var list = document.createElement('ul');
+	
+	json.forEach(row => {
+		var item = document.createElement('li');
+		item.appendChild(document.createTextNode(row.res_id));
+		list.appendChild(item);
+	});
+	console.log(list);
+	return list;
+
+}
 
 /*
 async function loadZip() {
