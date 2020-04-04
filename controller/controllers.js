@@ -49,12 +49,12 @@ exports.searchAreas = (req, res) => {
 		  console.log("Error in fetching zipcode: " + error);
 	  } else {
 		  console.log(results);
-		  if (!results.success){
-			  console.log("failure");
-			  res.json({ success: false });
+		  if (results){
+			  console.log("Success");
+			  res.json(results);
 		  } else {
-			  console.log("hi there");
-			res.json(results);
+			  console.log("Unsuccessful");
+			res.json(null);
 		  }
 	  }
   });

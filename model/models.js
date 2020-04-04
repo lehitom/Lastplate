@@ -43,7 +43,7 @@ exports.getArea = (body, callback) => {
 	pool.query(query, (err, res) => {
     if (err || res.rows.length == 0) {
       console.log("Search unsucessful: " + err);
-	  callback(err, {success: false});
+	  callback(err, null);
     } else {
 	  console.log("Zipcode found " + res.rows.length + " resturants");
       callback(null, res.rows);
