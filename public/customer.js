@@ -58,7 +58,7 @@ function searchAreas() {
 		if (result) {
 			$("#txtHint").empty();
 			var header = document.createElement('h3');
-			header.appendChild(document.createTextNode("Resturants in " + zipcode + ":"));
+			header.appendChild(document.createTextNode("Resturants in " + zipcode + "/" + result[0].cityname + ":"));
 			$("#txtHint").append(header);
 			$("#txtHint").append(pushArea(result));
 		} else {

@@ -37,7 +37,7 @@ exports.getZips = callback => {
 exports.getArea = (body, callback) => {
   let query = {
 	  text:
-		"SELECT r.res_id, r.res_name FROM restaurants r INNER JOIN locations l ON r.location_id = l.location_id WHERE l.zipcode=$1",
+		"SELECT r.res_id, r.res_name, l.city_name FROM restaurants r INNER JOIN locations l ON r.location_id = l.location_id WHERE l.zipcode=$1",
 	  values: [body.zipcode]
   };
 	pool.query(query, (err, res) => {
