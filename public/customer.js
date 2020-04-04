@@ -26,6 +26,25 @@ function pushZips(json) {
 	return list;
 
 }
+
+
+function searchAreas() {
+	var zipcode = $("#zipcode").val();
+
+	var params = {
+		zipcode: zipcode
+	};
+
+	$.post("/searchAreas", params, function(result) {
+		if (result && result.success) {
+			$("#txtHint").text("Got back reply");
+		} else {
+			$("#txtHint").text("Error getting reply");
+		}
+	});
+}
+
+
 /*
 async function loadZip() {
 	var zip = $("#zipcode").val();

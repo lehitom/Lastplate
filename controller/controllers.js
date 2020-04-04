@@ -41,15 +41,15 @@ exports.validZips = (req, res) => {
   });
 };
 
-exports.loadZip = (req, res) => {
-  console.log("Getting all zipcodes");
+exports.searchAreas = (req, res) => {
+  console.log("Getting zipcode " + req.body.zipcode);
   
-  model.getZips((error, results) => {
+  model.getArea(req.body, (error, results) => {
 	  if (error) {
-		  console.log("Error in zips: " + error);
+		  console.log("Error in fetching zipcode: " + error);
 	  } else {
 		  console.log(results);
-		  res.json(results);
+		  res.json({ success: true });
 	  }
   });
 };

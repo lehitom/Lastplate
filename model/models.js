@@ -33,7 +33,25 @@ exports.getZips = callback => {
     }
   });
 };
-  
+
+exports.getArea = (body, callback) => {
+  let query = {
+	  text:
+		"SELECT r.res_id, r.res_name FROM resturants r INNER JOIN locations l ON r.location_id = l.location_id WHERE l.zipcode=$1",
+	  values: [body.zipcode]
+  };
+	pool.query(query, (err, res) => {
+    if (err) {
+      console.log("Search unsucessful: " + err);
+	  callback(err, {success: false});
+    } else {
+	  console.log("Zipcode found " + res.rows.length + " resturants");
+      callback(null, {success: true});
+    }
+  });
+};
+
+
  /* 
   const username = req.body.username;
   const password = req.body.password;
