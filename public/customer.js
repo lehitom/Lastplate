@@ -38,7 +38,8 @@ function searchAreas() {
 	$.post("/searchAreas", params, function(result) {
 		if (result) {
 			$("#txtHint").empty();
-			$("#txtHint").appendChild(pushArea(result));
+			var list = pushArea(result)
+			$("#txtHint").appendChild(list);
 		} else {
 			$("#txtHint").text("Error getting reply");
 		}
