@@ -51,7 +51,7 @@ function searchAreas() {
 			$("#txtHint").append(header);
 			$("#txtHint").append(pushArea(result));
 		} else {
-			$("#txtHint").text("Error getting reply");
+			$("#txtHint").text("Invalid zipcode, no deals found");
 		}
 	});
 }
@@ -86,7 +86,7 @@ function searchRestaurants() {
 			$("#txtHint").append(header);
 			$("#txtHint").append(pushRestaurant(result));
 		} else {
-			$("#txtHint").text("Error getting reply");
+			$("#txtHint").text("Invalid restaurant ID, no deals found");
 		}
 	});
 }
