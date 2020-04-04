@@ -36,7 +36,7 @@ function searchAreas() {
 	};
 
 	$.post("/searchAreas", params, function(result) {
-		if (result ) {
+		if (result && (!(!result.success))) {
 			$("#txtHint").text("Got back reply");
 		} else {
 			$("#txtHint").text("Error getting reply");
