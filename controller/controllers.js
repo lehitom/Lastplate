@@ -50,8 +50,10 @@ exports.searchAreas = (req, res) => {
 	  } else {
 		  console.log(results);
 		  if (!results.success){
+			  console.log("failure");
 			  res.json({ success: false });
 		  } else {
+			  console.log("hi there");
 			res.json(results);
 		  }
 	  }
