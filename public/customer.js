@@ -37,13 +37,13 @@ function searchAreas() {
 
 	$.post("/searchAreas", params, function(result) {
 		if (result) {
-			$("#txtHint").replaceWith(pushArea(result);
+			$("#txtHint").replaceWith(pushArea(result));
 		} else {
 			$("#txtHint").text("Error getting reply");
 		}
 	});
 }
-/*
+
 function pushArea(json) {
 	
 	var list = document.createElement('ul');
