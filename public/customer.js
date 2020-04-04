@@ -37,7 +37,7 @@ function searchAreas() {
 
 	$.post("/searchAreas", params, function(result) {
 		if (result) {
-			$("#txtHint").replaceWith(pushArea(result));
+			$("#txtHint").text(pushArea(result));
 		} else {
 			$("#txtHint").text("Error getting reply");
 		}
@@ -46,6 +46,7 @@ function searchAreas() {
 
 function pushArea(json) {
 	
+	//var begin = '<div id="txtHint">'
 	var list = document.createElement('ul');
 	
 	json.forEach(row => {
