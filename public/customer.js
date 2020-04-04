@@ -82,7 +82,7 @@ function searchRestaurants() {
 		if (result) {
 			$("#txtHint").empty();
 			var header = document.createElement('h3');
-			header.appendChild(document.createTextNode("Deals at " + result.row[0].res_name + ":"));
+			header.appendChild(document.createTextNode("Deals at " + result[0].res_name + ":"));
 			$("#txtHint").append(header);
 			$("#txtHint").append(pushRestaurant(result));
 		} else {
