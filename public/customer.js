@@ -96,7 +96,7 @@ function pushRestaurant(json) {
 	
 	json.forEach(row => {
 		var item = document.createElement('li');
-		item.appendChild(document.createTextNode("'" + row.item_name + "' has a " + row.item_discout + "% discout on " + row.item_price + " with " + row.quantity + " remaining"));
+		item.appendChild(document.createTextNode("'" + row.item_name + "' has a " + row.item_discount + "% discount of $" + row.item_price + " with " + row.quantity + " remaining"));
 		list.appendChild(item);
 	});
 	console.log(list);
