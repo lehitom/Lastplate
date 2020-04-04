@@ -38,7 +38,7 @@ function pushZips(json) {
 	
 	json.forEach(row => {
 		var item = document.createElement('li');
-		item.appendChild(document.createTextNode(row.zipcode));
+		item.appendChild(document.createTextNode(row.zipcode + "/" + row.city_name));
 		list.appendChild(item);
 	});
 	console.log(list);
