@@ -1,3 +1,11 @@
+function isVerified() {
+	$.post("/isLoggedIn", function(res) {
+				if (!(res && res.success)) {
+					window.location.pathname = '/';
+				}
+	});
+}
+
 async function validZips() {
 	isVerified();
 	
@@ -61,47 +69,4 @@ function pushArea(json) {
 
 }
 
-/*
-async function loadZip() {
-	var zip = $("#zipcode").val();
-	
-	try {
-		let response = await fetch("/getZip", zip, {method:"POST"});
-		let json = await response.json();
-		
-		$("#txtHint").replaceWith(loadList(json));
-	}
-	catch (err){
-		console.log("error loading in zip");
-	}
-	
-}
 
-function loadList(json) {
-	
-	var list = "<table>
-					<tr>
-						<th>ID</th>
-						<th>Name</th>
-						<th>Address</th>
-					</tr>
-				<% json.forEach(row => { %>
-					<tr>
-						<td><%=row.res_id%></td>
-						<td><%=row.res_name%></td>
-						<td><%=row.address%></td>
-					</tr>
-				<% }); %>
-				</table>";
-	
-	return list;
-
-}
-*/
-function isVerified() {
-	$.post("/isLoggedIn", function(res) {
-				if (!(res && res.success)) {
-					window.location.pathname = '/';
-				}
-	});
-}
