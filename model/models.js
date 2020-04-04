@@ -54,7 +54,7 @@ exports.getArea = (body, callback) => {
 exports.getRestaurant = (body, callback) => {
   let query = {
 	  text:
-		"SELECT d.deal_id, d.item_name, d.item_discount, r.address, r.res_name FROM deals s INNER JOIN restaurants r ON d.restaurant_id = r.res_id WHERE d.restaurant_id=$1",
+		"SELECT d.deal_id, d.item_name, d.item_discount, r.address, r.res_name FROM deals d INNER JOIN restaurants r ON d.restaurant_id = r.res_id WHERE d.restaurant_id=$1",
 	  values: [body.restaurant]
   };
 	pool.query(query, (err, res) => {
