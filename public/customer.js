@@ -82,7 +82,7 @@ function searchRestaurants() {
 		if (result) {
 			$("#txtHint").empty();
 			var header = document.createElement('h3');
-			header.appendChild(document.createTextNode("Deals at " + result[0].res_name + "located at '" + result[0].address + "':"));
+			header.appendChild(document.createTextNode("Deals at " + result[0].res_name + " located at '" + result[0].address + "':"));
 			$("#txtHint").append(header);
 			$("#txtHint").append(pushRestaurant(result));
 		} else {
@@ -96,7 +96,7 @@ function pushRestaurant(json) {
 	
 	json.forEach(row => {
 		var item = document.createElement('li');
-		item.appendChild(document.createTextNode("ID: " + row.deal_id + " is '" + row.item_name + "'"));
+		item.appendChild(document.createTextNode("'" + row.item_name + "' has a " + row.item_discout + "% discout on " + row.item_price + " with " + row.quantity + " remaining"));
 		list.appendChild(item);
 	});
 	console.log(list);
