@@ -39,7 +39,7 @@ function searchAreas() {
 		if (result) {
 			$("#txtHint").empty();
 			var list = pushArea(result)
-			$("#txtHint").appendChild(list);
+			$("#txtHint").append(list);
 		} else {
 			$("#txtHint").text("Error getting reply");
 		}
