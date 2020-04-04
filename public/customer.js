@@ -48,15 +48,15 @@ function searchAreas() {
 
 function pushArea(json) {
 	
-	//var begin = '<div id="txtHint">';
+	
 	var list = document.createElement('ul');
 	
 	json.forEach(row => {
 		var item = document.createElement('li');
 		item.appendChild(document.createTextNode(row.res_id));
+		item.appendChild(document.createTextNode(row.res_name));
 		list.appendChild(item);
 	});
-	//var end = '</div>';
 	console.log(list);
 	return (list);
 
