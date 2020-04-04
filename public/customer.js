@@ -72,7 +72,7 @@ function pushArea(json) {
 }
 
 function searchRestaurants() {
-	var zipcode = $("#input").val();
+	var restaurant = $("#input").val();
 
 	var params = {
 		restaurant: restaurant
