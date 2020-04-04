@@ -43,7 +43,7 @@ function searchAreas() {
 		}
 	});
 }
-
+/*
 function pushArea(json) {
 	
 	var list = document.createElement('ul');
