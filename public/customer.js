@@ -56,7 +56,7 @@ function pushArea(json) {
 	});
 	var end = '</div>';
 	console.log(begin+list+end);
-	return list;
+	return (begin+list+end);
 
 }
 
