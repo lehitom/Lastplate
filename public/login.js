@@ -26,6 +26,7 @@ function login() {
 
 
 
+/*
 function logout() {
 	$.post("/logout", function(result) {
 		if (result && result.success) {
@@ -46,4 +47,4 @@ function getServerTime() {
 	}).fail(function(result) {
 		$("#status").text("Could not get server time.");
 	});
-}
+}*/

@@ -46,7 +46,7 @@ exports.getArea = (body, callback) => {
 	  callback(err, {success: false});
     } else {
 	  console.log("Zipcode found " + res.rows.length + " resturants");
-      callback(null, {success: true});
+      callback(null, res.rows);
     }
   });
 };
